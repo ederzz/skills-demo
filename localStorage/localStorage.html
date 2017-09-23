@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>localStorage</title>
+		<style>
+			body,ul,li{
+				padding:0;
+				margin:0;
+			}
+			li{
+				list-style:none;
+			}
+			body{
+				background:rgba(25,165,100,0.8);
+				color:rgba(255,255,255,1);
+			}
+			.container{
+				width:1000px;
+				margin:0 auto;
+			}
+			.container .title{
+				font-size:30px;
+				text-align: center;
+				line-height: 40px;
+			}
+			ul{
+				border:1px solid rgba(255,255,255,0.8);
+				width:1000px;
+				box-sizing: border-box;
+				padding:10px;
+				border-radius:3px;
+			}
+			li{
+				border-bottom:1px solid rgba(255,255,255,0.8);
+				padding:10px 0;
+			}
+			ul li:nth-child(4){
+				border:none;
+			}
+			li div{
+				display: inline-block;
+				height:22px;
+				line-height:22px;
+				vertical-align: top;
+			}
+			li div.value{
+				width:700px;
+				border:1px solid rgba(255,255,255,0.8);
+				margin-left:17px;
+				padding:8px;
+			}
+			li div.storage-attr{
+				width:236px;
+				text-align: right;
+			}
+			li:nth-child(4) > div.value{
+				height:150px;
+			}
+			.store-box label,.store-box input{
+				display: block;
+			}
+			.store-box label{
+				font-size:18px;
+				padding:7px 0;
+			}
+			.store-box input{
+				width:270px;
+				height:35px;
+				border-radius:3px;
+				border:1px solid rgba(255,255,255,0.8);
+				outline:none;
+				box-sizing:border-box;
+				padding:2px 3px;
+				color:rgba(25,165,100,0.8);
+			}
+			.store-box div{
+				display: inline-block;
+			}
+			.store-btn button{
+				width:70px;
+				height:35px;
+				background:#fff;
+				border:1px solid rgba(255,255,255,0.8);
+				border-radius:3px;
+				background:#5d9a25;
+				color:#fff;
+				outline:none;
+				cursor:pointer;
+			}
+			.store-btn{
+				height:35px;
+			}
+			.store-box{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				width:920px;
+				margin:0 auto;
+				align-items: flex-end;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="title">Your LocalStorage</div>
+			<ul>
+				<li>
+					<div class="storage-attr">localStorage.key(0) :</div>
+					<div class="value"></div>
+				</li>
+				<li>
+					<div class="storage-attr">localStorage.length :</div>
+					<div class="value"></div>
+				</li>
+				<li>
+					<div class="storage-attr">localStorage.getItem("name") :</div>
+					<div class="value"></div>	
+				</li>
+				<li>
+					<div class="storage-attr">localStorage.valueOf() :</div>
+					<div class="value"></div>
+				</li>
+			</ul>
+			<div class="store-box">
+				<div class="key-box">
+					<label for="key">Key :</label>
+					<input id="key" type="text" />
+				</div>
+				<div class="value-box">
+					<label for="value">value :</label>
+					<input id="value" type="text" />
+				</div>
+				<div class="store-btn">
+					<button>Store</button>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			/**
+			 * localStorage的10方法和属性：
+			 * 		1、localStorage.setItem(key,value):存储，只能存储字符串；也可以localStorage.key = value达到同样效果；
+			 * 		2、localStorage.getItem(name):获取name的值,也可以直接localStorage.+属性名获取对应的值；
+			 * 		3、localStorage.length:localStorage对象的长度；
+			 * 		4、localStorage.key(number):number为从0 到 length-1，获得对应的key的名字；
+			 * 		5、localStorage.valueOf():获取localStorage整个对象；
+			 * 		6、localStorage.removeItem(name):删除相应的属性；
+			 * 		7、localStorage.arr.toLocaleString():将localStorage里的数组arr转化为本地字符串；
+			 * 		8、localStorage.hasOwnProperty("jzx"):检查localStorage里是否存储了jzx；
+			 * 		9、localStorage.PropertyIsEnumerable():判断给定的属性是否可以用 for...in 语句进行枚举;
+			 * 		10、localStorage.clear():清空localStorage上的数据；
+			 */
+			
+			window.onload = function(){
+				document.querySelector("li:nth-child(1) .value").innerHTML = localStorage.key(0);
+				document.querySelector("li:nth-child(2) .value").innerHTML = localStorage.length;
+				document.querySelector("li:nth-child(3) .value").innerHTML = localStorage.getItem("name");
+				document.querySelector("li:nth-child(4) .value").innerHTML = JSON.stringify(localStorage.valueOf());
+				document.querySelector(".store-btn button").addEventListener('click',function(){
+					var key = document.querySelector(".key-box input").value;
+					var value = document.querySelector(".value-box input").value;
+					localStorage.setItem(key,value);
+					window.location.reload();
+				})
+			};
+		</script>
+	</body>
+</html>

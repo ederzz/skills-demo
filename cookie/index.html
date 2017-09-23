@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>cookie</title>
+		<style>
+			body{
+				background:#66c193;
+			}
+			h1{
+				color: #fff;
+			    font-size: 29px;
+			    width: 400px;
+			    margin: auto;
+			    position: relative;
+			    top: 15px;
+			    font-weight: 600;
+			    text-align: center;
+			}
+			.container{
+				width:250px;
+				position:absolute;
+				top:0;
+				left:0;
+				right:0;
+				bottom:0;
+				margin:auto;
+				height:200px;
+			}
+			.container input,.container button{
+				width:250px;
+				height:43px;
+				box-sizing: border-box;
+				display: block;
+				margin:0 0 15px;
+				border-radius:4px;
+				border:1px solid rgba(255,255,255,0.4);
+				padding:10px 15px;
+				outline:none;
+				color:#fff;
+				font-size:18px;
+				text-align:center;
+				font-weight: 300;
+				background-color:rgba(255,255,255,0.2);
+			}
+			.container input:hover{
+				background-color:rgba(255,255,255,0.3);
+			}
+			body ::-webkit-input-placeholder{
+				color:#fff;
+				font-size:18px;
+			}
+			.container button{
+				background:#fff;
+				color:#66c193;
+			}
+			.cookie{
+				width:1000px;
+				height:200px;
+				margin:30px auto 0;
+				border:1px solid rgba(255,255,255,0.8);
+				box-sizing:border-box;
+				padding:10px;
+				border-radius:4px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<h1>YOUR COOKIE</h1>
+			<div class="cookie"></div>
+			<form class="container">
+				<input class="key" type="text" placeholder="Key"/>
+				<input class="value" type="text" placeholder="Value"/>
+				<button class="sub-btn">GO</button>
+			</form>
+		</div>
+		<script>
+			
+			//1、存储值先用encodeURIComponent转化:因为cookie的名和值都不能有分号（；）、逗号（，）、等号（=）、空格，这个函数会将他们转换掉，取值时再用decodeURIComponent函数转换回来
+			//2、设置过期时间在键值对后面加上";expires=" + d.toUTCString()，d为一个date对象，如果不设置就默认这个cookie只存在于浏览器会话期间（浏览器关闭就没了）
+			//3、删除一个cookie，直接重新设置，把过期时间设置为过去的一个时间(删除一个cookie时，path和domain路径必须相同，默认是html的path和domain);还可以设置max-age=0;来达到效果
+			//4、设置域名：不能设置和html域名不同的域名，设置也不会成功，但是不影响后面对cookie的操作
+			//5、不同域名的关系：只有和设置cookie的网页在同一web服务器下的网页才能访问该网页创建的cookie
+			//6、path：若要使整个网站能使用这个cookie就设置path=/;
+			//7、可以在chrome浏览器的application下查看本页面的cookie情况，包括expires/domain/path
+			
+			window.onload = function(){
+				document.querySelector(".cookie").innerHTML = document.cookie;
+				
+				//查找某个cookie的值，无非就是对cookie这个字符串进行查找,也可以使用正则表达式
+				let getCookie = (name) => {
+					if(document.cookie.length > 0){
+						var start = document.cookie.indexOf(name + '=');
+						if(start != -1){
+							start = start + name.length + 1;
+							var end = document.cookie.indexOf(';',start);
+							if(end == -1){
+								end = document.cookie.length;
+							};
+							return document.cookie.substring(start,end);
+						};
+					};
+					return '';
+				};
+				
+				//删除某个cookie:设置过期时间为过去的一个时间
+				let deleteCookie = (name) => {
+					if(name && name.length > 0){
+						let d = new Date();
+						d.setDate(d.getDate() - 1);
+						document.cookie = name + '=' + ";expires=" + d.toUTCString(); 
+					}else{
+						alert("cuo");
+					};
+				};
+				
+				//设置新的cookie,过期时间设置为一年
+				let setCookie = () => {
+					let key = encodeURIComponent(document.querySelector(".key").value);
+					let value = encodeURIComponent(document.querySelector(".value").value);
+					let d = new Date();
+					d.setDate(d.getDate() + 365);
+					document.cookie = key + '=' + value + ";expires=" + d.toUTCString();
+				};
+				document.querySelector(".sub-btn").addEventListener('click',setCookie);
+			}
+		</script>
+	</body>
+</html>
