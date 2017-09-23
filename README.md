@@ -10,3 +10,11 @@
 		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、css的打包，css和js的分离（ExtractTextPlugin）
 		<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、webpack-dev-server的自动刷新
 		</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4、webpack-dev-server启动端口号的配置
+		
+### /cookie
+--------
+包含一个介绍cookie用法的demo
+
+### /localStorage
+------------
+包含了一个介绍localStorage用法的demo
