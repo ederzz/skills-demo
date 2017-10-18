@@ -1,0 +1,202 @@
+
+
+body{
+	padding:0;
+	margin:0;
+	background:#332b2a;
+	font: 14px Arial,Helvetica,sans-serif;
+	color:#afa2a2;
+	padding-bottom:100px;
+}
+
+
+/*common*/
+ul,li,p{
+	padding:0;
+	margin:0;
+}
+a{
+	text-decoration: none;
+}
+a:link{
+	color:#afa2a2;
+}
+a:visited{
+	color:#afa2a2;
+}
+a:hover{
+	color:#fff;
+}
+a:active{
+	color:#afa2a2;
+}
+
+.right{
+	float:right;
+}
+li{
+	list-style: none;
+}
+.clear:after{
+	content:'';
+	display: block;
+	clear:both;	
+}
+/*common*/
+
+
+header{
+	height: 35px;
+	line-height: 35px;
+	padding:0 15px;
+}
+
+.container{
+	padding:90px 200px 0;
+	font-size:12px;
+}
+.play-list{
+	width:560px;
+}
+.list-head{
+	border-bottom:1px solid rgba(255,255,255,0.05);
+	padding-bottom: 10px;
+}
+.list-con li{
+	border-bottom:1px solid rgba(255,255,255,0.05);
+	height:45px;
+	line-height: 45px;
+}
+.list-con li a.song{
+	width:315px;
+	display: inline-flex;
+	justify-content: space-between;
+}
+
+.list-con li div{
+	display: inline-block;
+}
+.star{
+	margin:0 15px 0 10px;
+}
+.icon-wrapper{
+	float:right;
+	padding-right:20px;
+	position: relative;
+}
+.icon-wrapper .share-link{
+	position:absolute;
+	left:-40px;
+	display: none;
+}
+.icon-cancel{
+	margin-left:10px;
+}
+.icon-weibo{
+	font-size:16px;
+}
+.icon-douban{
+	font-size:18px;
+}
+
+.play-list{
+	float:left;
+}
+.play-detail{
+	width:150px;
+	float:right;
+	text-align:center;
+}
+.poster-con{
+	width:150px;
+	height:150px;
+	overflow: hidden;
+	margin-bottom:20px;
+}
+.poster{
+	width:150px;
+}
+.author{
+	font-size:16px;
+	line-height:1.5em;
+	padding:8px 0;
+	color:#e6dba4;
+}
+.follow{
+	padding:5px 0;
+	border-top:1px solid rgba(255,255,255,0.05);
+	border-bottom:1px solid rgba(255,255,255,0.05);
+	margin:0 10px;
+	display: flex;
+	justify-content: space-around;
+}
+
+/*播放操作*/
+.play-btn{
+	margin-top:100px;
+	display: flex;
+}
+.mod1{
+	width:540px;
+}
+.mod1 .hd{
+	display: flex;
+	justify-content: space-between;
+}
+.mod1 .bd{
+	margin-top:10px;
+	position:relative;
+}
+.mod1 .bd .progress-load{
+	background:#afa2a2;
+	height:4px;
+	cursor: pointer;
+}
+.mod1 .bd .progress-play{
+	background:#fff;
+	height:4px;
+	position: absolute;
+	top:0;
+	width:100px;
+	cursor: pointer;
+}
+.mod1 .bd .cir-btn{
+	display: block;
+	height:12px;
+	width:12px;
+	background:#fff;
+	border-radius:6px;
+	position:absolute;
+	left:88px;
+	top:-4px;
+}
+.mod2{
+	margin:14px 0 0 35px;
+}
+.mod2 i{
+	margin-right:10px;
+}
+.icon-volume{
+	font-size:20px;
+}
+.mod3{
+	margin:18px 0 0 96px;
+	width:160px;
+	display: flex;
+	justify-content: space-between;
+}
+.mod3 .icon{
+	font-size:22px;
+}
+.mod3 .icon-play{
+	font-size:30px;
+	position: relative;
+	top:-4px;
+}
+
+
+
+
+
+
+
