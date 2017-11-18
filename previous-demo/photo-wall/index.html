@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			img{
+				width:80px;
+				height:80px;
+			}
+			#imgwarp{
+				width:800px;
+				height:400px;
+				margin: 8px auto;
+				perspective: 800px;
+			}
+			#imgwarp img{
+				float:left;
+			}
+			#btn{
+				width:100px;
+				text-align:center;
+				font:16px/40px "微软雅黑";
+				color: #fff;
+				padding:0px 20px;
+				background: rgb(0,100,0);
+				margin:0 auto;
+				border-radius: 5px;
+				cursor:pointer;
+				box-shadow:2px 2px 10px rgba(0,0,0,0.5);
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var btn=document.getElementById("btn");
+				var imgs=document.querySelectorAll("img");
+				var endNum=0;
+				var allEnd=0;
+				var on=true;
+				btn.onclick=function(){
+					if(!on){
+						return;
+					}
+					on=false;
+					for(var i=0;i<imgs.length;i++){
+						(function(i){
+							setTimeout(function(){
+								montion(imgs[i],'100ms',function(){
+									this.style.transform='scale(0)';
+									
+								},function(){
+									//第二个运动
+									montion(this,'1s',function(){
+										this.style.transform="scale(1)";
+										this.style.opacity='0';
+									},function(){
+										endNum++;
+										if(endNum==imgs.length){
+											toBig();
+										}
+									});
+								});
+							},Math.random()*1000);
+						})(i)
+					}
+					endNum=0;
+				};
+				
+				function toBig(){
+					for(var i=0;i<imgs.length;i++){
+						imgs[i].style.transition='';
+						imgs[i].style.opacity=1;
+						imgs[i].style.transform='rotateY(0deg) translateZ(-'+Math.random()*500+'px)';
+						
+						(function(i){
+							setTimeout(function(){
+								montion(imgs[i],'2s',function(){
+									this.style.opacity=1;
+									this.style.transform='rotateY(-360deg) translateZ(0)';
+								},function(){
+									allEnd++;
+									if(allEnd==imgs.length){
+										on=true;
+									}
+								});
+							},Math.random()*1000)
+						})(i);
+					}
+					
+				}
+				
+				function montion(obj,time,doFn,callBack){
+					obj.style.transition=time;
+					doFn.call(obj);
+					var called=false;
+					obj.addEventListener('transitionend',function(){
+						if(!called){
+							callBack&&callBack.call(obj);
+							called=true;
+						}
+					},false)
+				}
+			};
+			
+		</script>
+	</head>
+	<body>
+		<div id="imgwarp">
+			<img src="img/1.jpg" alt="" id="" />
+			<img src="img/2.jpg" alt="" id="" />
+			<img src="img/3.jpg" alt="" id="" />
+			<img src="img/4.jpg" alt="" id="" />
+			<img src="img/5.jpg" alt="" id="" />
+			<img src="img/6.jpg" alt="" id="" />
+			<img src="img/7.jpg" alt="" id="" />
+			<img src="img/8.jpg" alt="" id="" />
+			<img src="img/9.jpg" alt="" id="" />
+			<img src="img/10.jpg" alt="" id="" />
+			<img src="img/11.jpg" alt="" id="" />
+			<img src="img/12.jpg" alt="" id="" />
+			<img src="img/13.jpg" alt="" id="" />
+			<img src="img/14.jpg" alt="" id="" />
+			<img src="img/15.jpg" alt="" id="" />
+			<img src="img/16.jpg" alt="" id="" />
+			<img src="img/17.jpg" alt="" id="" />
+			<img src="img/18.jpg" alt="" id="" />
+			<img src="img/19.jpg" alt="" id="" />
+			<img src="img/20.jpg" alt="" id="" />
+			<img src="img/21.jpg" alt="" id="" />
+			<img src="img/22.jpg" alt="" id="" />
+			<img src="img/23.jpg" alt="" id="" />
+			<img src="img/24.jpg" alt="" id="" />
+			<img src="img/25.jpg" alt="" id="" />
+			<img src="img/26.jpg" alt="" id="" />
+			<img src="img/27.jpg" alt="" id="" />
+			<img src="img/28.jpg" alt="" id="" />
+			<img src="img/29.jpg" alt="" id="" />
+			<img src="img/30.jpg" alt="" id="" />
+			<img src="img/31.jpg" alt="" id="" />
+			<img src="img/32.jpg" alt="" id="" />
+			<img src="img/33.jpg" alt="" id="" />
+			<img src="img/34.jpg" alt="" id="" />
+			<img src="img/35.jpg" alt="" id="" />
+			<img src="img/36.jpg" alt="" id="" />
+			<img src="img/37.jpg" alt="" id="" />
+			<img src="img/38.jpg" alt="" id="" />
+			<img src="img/39.jpg" alt="" id="" />
+			<img src="img/40.jpg" alt="" id="" />
+			<img src="img/41.jpg" alt="" id="" />
+			<img src="img/42.jpg" alt="" id="" />
+			<img src="img/43.jpg" alt="" id="" />
+			<img src="img/44.jpg" alt="" id="" />
+			<img src="img/45.jpg" alt="" id="" />
+			<img src="img/46.jpg" alt="" id="" />
+			<img src="img/47.jpg" alt="" id="" />
+			<img src="img/48.jpg" alt="" id="" />
+			<img src="img/49.jpg" alt="" id="" />
+			<img src="img/50.jpg" alt="" id="" />
+		</div>
+		<div id="btn">
+			点击查看效果
+		</div>
+	</body>
+</html>

@@ -1,0 +1,207 @@
+/*清除默认样式和设置公共样式*/
+body, div,iframe, ul, ol, dl, dt, dd, li, dl,   
+h1, h2, h3, h4, table,th, td, input, button, select,  
+ textarea,p {margin:0;padding:0;}
+
+ol,ul,li{list-style: none;}
+
+/*将图像置于父元素的中部*/
+img{border:0;vertical-align: middle;}
+body{font: 12px/1.5 tahoma,arial,"\5b8b\4f53";}
+.clear{content:"";display: block;visibility:hidden;clear:both;}
+a{text-decoration:none;}
+/*清除默认样式结束和设置公共样式*/
+
+/*字体图标设置*/
+@font-face {
+  font-family: 'iconfont1';  /* project id 288961 */
+  src: url('//at.alicdn.com/t/font_t1d90uycuhj8aor.eot');
+  src: url('//at.alicdn.com/t/font_t1d90uycuhj8aor.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_t1d90uycuhj8aor.woff') format('woff'),
+  url('//at.alicdn.com/t/font_t1d90uycuhj8aor.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_t1d90uycuhj8aor.svg#iconfont') format('svg');
+}
+.iconfont1{
+	font-family:"iconfont1" !important;
+	color:#C40000;
+    font-size:12px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.ic{
+	font-size:16px;
+	position:relative;
+	top:2px;
+	left:2px;
+}
+.ic3{
+	font-size: 16px;
+}
+.ic4{
+	font-weight:bold;
+}
+.ic1{
+	position:absolute;
+	border-width: 3px;
+    border-style: solid;
+    border-color: #bbb transparent transparent;
+    top:15px;
+    right:4px;
+}
+/*字体图标设置结束*/
+
+/*最顶部导航*/
+.nav_top{height:32px;background:#F2F2F2;line-height: 32px;position:relative;border-bottom:1px solid #e5e5e5;}
+.nav_top{color:#999;font-size:12px;font-family:"Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;}
+.nav_top a{display: inline-block;}
+.nav_top .nav_right_first p .a1{padding:0 10px 0 20px;}
+.nav_top .nav_right_first p .a2{padding:0 10px;}
+.nav_top .nav_right_first ul li{padding:0 10px;float:left;}
+.nav_top a{color:#999;}
+/*给.nav_right_first方便其进行相对于原来位置的布局*/
+.nav_right_first{height:32px;position:relative;width:1230px;left:-15px;margin:0 22px;}
+.nav_right_two{position:absolute;top:0;right:0;}
+/*图标大小等属性设置*/
+.icon-weibiaoti1{
+	color:#C40000;
+	font-size:12px;
+	position:relative;
+	}
+.icon-gouwucheman{
+	color:#C40000;
+	font-size:12px;
+}
+.nav_top .nav_right_first .h-red:hover{
+	color:#C40000;
+}
+.nav_top .nav_right_first .nav_right_two li:first-child .tog{
+	position:absolute;
+	top:32px;
+	display: none;
+	padding:8px 10px;
+	border:1px solid rgb(238,238,238);
+	border-top:none;
+	width:74px;
+	height:auto;
+}
+.nav_top .nav_right_first .nav_right_two .first_tog2 .tog{
+	position:absolute;
+	top:32px;
+	display: none;
+	padding:8px 10px;
+	border:1px solid rgb(238,238,238);
+	border-top:none;
+	width:74px;
+	height:auto;
+}
+.nav_top .nav_right_first .nav_right_two .first_tog3 .tog{
+	position:absolute;
+	top:32px;
+	right:8px;
+	display: none;
+	padding:8px 10px;
+	border:1px solid rgb(238,238,238);
+	border-top:none;
+	width:122px;
+	height:auto;
+}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog{
+	position:absolute;
+	top:32px;
+	display: none;
+	padding:8px 10px;
+	border:1px solid rgb(238,238,238);
+	border-top:none;
+	width:1141px;
+	height:auto;
+	top:32px;
+	right:0px;
+}
+.hidden{
+	width:72px;height:4px;position:absolute;top:30px;background:#fff;
+	display: none;
+}
+.nav_top .nav_right_first .nav_right_two .first_tog2 .hidden{
+	width:60px;height:4px;position:absolute;top:30px;background:#fff;
+	display: none;
+}
+.nav_top .nav_right_first .nav_right_two .first_tog3 .hidden{
+	width:74px;height:4px;position:absolute;top:30px;background:#fff;
+	display: none;
+}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .hidden{
+	width:88px;height:4px;position:absolute;top:30px;background:#fff;
+	display: none;
+}
+.nav_top .nav_right_first .nav_right_two .first_tog1 a{padding:0 14px 0 10px;}
+.nav_top .nav_right_first .nav_right_two li:first-child a:hover{background:#fff;border-bottom:none;text-decoration: underline;color:#C40000;}
+.nav_top .nav_right_first .nav_right_two li:nth-child(4) a{padding:0 14px 0 10px;}
+.nav_top .nav_right_first .nav_right_two li:nth-child(4) a:hover{background:#fff;border-bottom:none;text-decoration: underline;color:#C40000;}
+.nav_top .nav_right_first .nav_right_two li:nth-child(9) a{padding:0 14px 0 10px;}
+.nav_top .nav_right_first .nav_right_two li:nth-child(9) a:hover{background:#fff;border-bottom:none;text-decoration: underline;color:#C40000;}
+
+.nav_top .nav_right_first .nav_right_two li:nth-child(8) a:first-child{padding:0 14px 0 10px;}
+.nav_top .nav_right_first .nav_right_two li:nth-child(8) a:hover{background:#fff;border-bottom:none;text-decoration: underline;color:#C40000;}
+
+.nav_top .nav_right_first .nav_right_two .first_tog3 .tog ul{
+	width:122px;
+	font-size: 12px;	
+	font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+	line-height:22px;
+	color:#666;
+	text-align:left;
+	/*因为这个时候li没有设置width或者width为auto时会增加宽度，使下边框线增长*/
+	overflow: hidden;
+}
+.nav_top .nav_right_first .nav_right_two .first_tog3 .tog ul{
+	margin-top:-5px;
+}
+.nav_top .nav_right_first .nav_right_two .first_tog3 .tog ul li a{
+	margin-right:20px;display: inline-block;
+	height:22px;
+}
+.nav_top .nav_right_first .nav_right_two .first_tog3 .tog ul li{
+	float: none;
+    padding: 5px 0;
+    height: auto;
+    display: block;
+    line-height: 1.4;
+    border-bottom: 1px dotted #827777;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    border-bottom-color: rgb(130, 119, 119);
+    margin-right: -20px;
+}
+
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog a{width:65px;padding:0 15px;text-align:left;}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog{padding:25px 0 55px;}
+
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div{height:175px;display: inline-block;vertical-align: top;}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div.or{width:285px;}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div.bl{width:380px;}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div.black{width:285px;}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div.com{width:180px;}
+
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div.or a:hover{color:#f56a00;}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div.bl a:hover{color:#2263d4;}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div.black a:hover{color:#000;}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div.com a:hover{color:#666;}
+
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div h2{margin-left:16px;}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div.or h2{color:#f56a00;}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div.bl h2{color:#2263d4;}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div.black h2{color:#000;}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div.com h2{color:#666;}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div h2{font-size:16px;font-family: '\5FAE\8F6F\96C5\9ED1',arial,"\5b8b\4f53";}
+.nav_top .nav_right_first .nav_right_two .first_tog4 .tog div a{font-size:12px;font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;}
+
+.first_tog4 .tag .or a{display: inline-block;}
+
+.or,.bl,.black,.com {font-size: 0;-webkit-text-size-adjust:none;}
+.or a {font-size: 12px;}
+.bl a {font-size: 12px;}
+.black a {font-size: 12px;}
+.com a {font-size: 12px;}
+/*最顶部导航结束*/

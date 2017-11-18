@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>天猫tmall.com</title>
+		<link rel="shortcut icon" href="img/favicon.ico" />
+		<link rel="stylesheet" href="css/top-nav.css" />
+		<script src="js/jquery-1.11.1.js"></script>
+		<script src="js/tmall.js"></script>
+	</head>
+	<!--待解决问题 绝对定位-->
+	<body>
+		<!--最顶部导航-->
+		<!--先使用一个大的容器包含，width100%-->
+		<div class="nav_top">
+			<!--再使用一个容器，规定宽度，位置等-->
+			<div class="nav_right_first">
+				<!--最后使用一个容器包含所有的导航，方便进行定位，这里最好使用列表，因为当鼠标放置a链接上时，会有其他盒子谈出来，用li方便包裹-->
+				<!--左侧导航-->
+				<p>
+					<span>喵，欢迎来天猫</span>
+					<a class="a1 h-red" href="#">请登录</a>
+					<a class="a2 h-red" href="#">免费注册</a>
+
+				</p>
+				
+				<!--右侧导航-->
+				<ul class="nav_right_two">
+					<li class="first_tog1" style="position:relative;">
+						<a class="first" href="#" style="display:inline-block;position:relative;">
+							我的淘宝
+							<!--在a链接中放置个b标签，方便放置a链接后面的图标-->
+							<b class="ic1"></b>
+						</a>
+						<div class="hidden"></div>
+						<!--设置一个div放置:hover弹出来的内容,并且需要给这个div设置成绝对定位，让他脱离文档流-->
+						<div class="tog">
+							<p>已买到的宝贝</p>
+							<p>已卖出的宝贝</p>
+						</div>
+					</li>
+					<li>
+						<i class="iconfont1 ic">&#xe600;</i>
+						<a class="h-red" href="#">我关注的品牌</a>
+					</li>
+					<li>
+						<i class="iconfont1">&#xe601;</i>
+						<a class="h-red" href="#">购物车</a>
+					</li>
+					<li class="first_tog2" style="position:relative;">
+						<a href="#" style="position:relative;">
+							收藏夹
+							<b class="ic1"></b>
+						</a>
+						<div class="hidden"></div>
+						<div class="tog">
+							<p>收藏的宝贝</p>
+							<p>收藏的店铺</p>
+						</div>
+					</li>
+					<li>
+						<i class="iconfont1 ic3">&#xe634;</i>
+						<a class="h-red" href="#">手机版</a>
+					</li>
+					<li>
+						<a class="h-red" href="#">淘宝网</a>
+					</li>
+					<li>
+						<a class="h-red" href="#">企业购</a>
+					</li>
+					<li class="first_tog3" style="position:relative;">
+						<a class="first" href="#" style="position:relative;">
+							商家支持
+							<b class="ic1"></b>
+						</a>
+						<div class="hidden"></div>
+						<div class="tog">
+							<ul>
+								<li>
+									<h3>商家：</h3><a href="#">商家中心</a>
+									<a href="#">商家入驻</a>
+									<a href="#">运营服务</a>
+									<a href="#">商家品控</a>
+									<a href="#">商家工具</a>
+									<a href="#">商家规则</a>
+									<a href="#">天猫智库</a>
+									<a href="#">喵言喵语</a>
+								</li>
+								<li>
+									<h3>帮助：</h3>
+									<a href="#">帮助中心</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="first_tog4" style="position:relative;padding-right:0;">
+						<i class="iconfont1 ic4">&#xe631;</i>
+						<a class="fouth" href="#" style="position:relative;">
+							网站导航
+							<b class="ic1"></b>
+						</a>
+						<div class="hidden"></div>
+						<!--a链接的换行会被解析,还有div-->
+						<div class="tog">
+							<div class="or">
+								<h2>热点推荐 Hot</h2>
+								<a href="#">天猫超市</a>
+								<a href="#">喵鲜生</a>
+								<a href="#">科技新品</a>
+								<a href="#">女装新品</a>
+								<a href="#">内衣新品</a>
+								<a href="#">试美装</a>
+								<a href="#">运动新品</a>
+								<a href="#">时尚先生</a>
+								<a href="#">精明妈咪</a>
+								<a href="#">吃乐会</a>
+								<a href="#">企业采购</a>
+								<a href="#">会员积分</a>
+								<a href="#">天猫国际</a>
+							</div>
+							<div class="bl">
+								<h2>行业市场 Market</h2>
+								<a href="">美妆</a><a href="">电器</a><a href="">女装</a><a href="">男装</a><a href="">女鞋</a><a href="">男鞋</a><a href="">内衣</a><a href="">箱包</a><a href="">运动</a><a href="">母婴</a><a href="">家装</a><a href="">医疗</a><a href="">食品</a><a href="">配饰</a><a href="">汽车</a>
+							</div>
+							<div class="black">
+								<h2>品牌风尚 Brand</h2>
+								<a href="">尚天猫</a><a href="">大牌街</a><a href="">潮牌街</a><a href="">天猫原创</a><a href="">什么牌子好</a>
+							</div>
+							<div class="com">
+								<h2>服务指南 Hlep</h2><a href="">帮助中心</a><a href="">品质保障</a><a href="">特色服务</a><a href="">7天退换货</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--最顶部导航结束-->
+	</body>
+</html>
