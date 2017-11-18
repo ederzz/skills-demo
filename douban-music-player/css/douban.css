@@ -167,7 +167,7 @@ header{
 	background:#fff;
 	border-radius:6px;
 	position:absolute;
-	left:88px;
+	right:-6px;
 	top:-4px;
 }
 .mod2{
@@ -193,7 +193,12 @@ header{
 	position: relative;
 	top:-4px;
 }
-
+.mod3 .icon-pause {
+	font-size:30px;
+	position: relative;
+	top:-4px;
+	display: none;
+}
 
 
 
