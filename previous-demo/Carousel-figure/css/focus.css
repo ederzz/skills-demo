@@ -1,0 +1,78 @@
+/*reset*/
+div,ul,li,img{
+	margin:0;
+	padding:0;
+}
+ul,li{
+	list-style: none;
+}
+li{
+	float:left;
+}
+a{
+	text-decoration: none;
+	color:#00bb00;
+}
+/*公共样式*/
+img{
+	width:600px;
+	height:350px;
+	border-radius:3px;
+}
+.btn_num a{
+	text-decoration: none;
+	color:#00BB00;
+	margin-right:5px;
+}
+/*页面样式*/
+@font-face {
+  font-family: 'iconfont';  /* project id 288961 */
+  src: url('//at.alicdn.com/t/font_bo9hezqud0k3ayvi.eot');
+  src: url('//at.alicdn.com/t/font_bo9hezqud0k3ayvi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_bo9hezqud0k3ayvi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_bo9hezqud0k3ayvi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_bo9hezqud0k3ayvi.svg#iconfont') format('svg');
+}
+.pre i{
+	font-family: 'iconfont';
+	font-style:normal;
+	font-size:45px;
+}
+.aft i{
+	font-family: 'iconfont';
+	font-style:normal;
+	font-size:45px;
+}
+.main{
+	position:relative;
+	
+}
+div .img_con{
+	width:600px;
+	height:350px;
+	overflow: hidden;
+	margin:0 auto;
+	position: relative;
+	margin-top:120px;
+}
+div .img_con ul{
+	/*必须给ul设置宽度，使列表项浮动后后排列在同一排*/
+	width:2500px;
+	position: absolute;
+	left:0px;
+}
+.btn_num{
+	position: absolute;
+	top:295px;
+	right:375px;
+}
+.pre{
+	position: absolute;
+	top:130px;
+	left:250px;
+}
+.aft{
+	position: absolute;
+	top:130px;
+	right:250px;
+}
