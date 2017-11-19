@@ -24,11 +24,11 @@ const playlist = [
 		length: 184
 	},
 	{
-		url: 'http://mr3.doubanio.com/5476efc5ac92a33ae406ddc51f3e9943/0/fm/song/p2259166_128k.mp3',
-		picUrl: 'https://img3.doubanio.com/view/site/large/public/d73e53befa3527d.jpg',
-		singer: '痛仰',
+		url: 'http://mr3.doubanio.com/51e21e8ee8256682e141a947e58cecc1/0/fm/song/p2444432_128k.mp3',
+		picUrl: 'https://img3.doubanio.com/view/site/large/public/0341bfb46a0e976.jpg',
+		singer: '反光镜',
 		type: 'rock',
-		songName: '公路之歌',
-		length: 184
+		songName: '只有音乐才是我的解药',
+		length: 150
 	}
 ];

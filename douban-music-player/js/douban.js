@@ -1,40 +1,33 @@
 window.onload = () => {
+	//播放模式图标
+	let playMode = [ '&#xe62b;', '&#xe672;', '&#xe624;', '&#xe84a;' ];
 	
-	//第三方分享，悬浮效果
-	var icon_export = document.querySelector(".list-con ul");
-	var share_icon = document.querySelector(".list-con .share-link");
-	icon_export.addEventListener('mouseover',(e) => {
-		if(e.target.className == "icon icon-export"){
-			e.target.style.visibility = "hidden";
-			e.target.parentNode.previousSibling.previousSibling.style.display = 'block';
-		}
-	})
-	icon_export.addEventListener('mouseout',(e) => {
-		if(e.target.className == "share-link"){
-			e.target.style.display = "none";
-			e.target.nextSibling.nextSibling.firstChild.nextSibling.style.visibility = 'visible';
-		}
-	});
-	
-	//播放处理
-	var dbAudio = new Audio();
-	var playingIndex = 0;
+	//audio播放器
+	let dbAudio = new Audio();
+	let playingIndex = 0;
 
-	var author = document.querySelector( '.play-detail>.author' );//作者名
-	var posterImg = document.querySelector( '.play-detail>.poster-con>.poster' );//海报
-	var songType = document.querySelector( '.play-detail>.type>a' );//音乐类型
-	var songTitle = document.querySelector( '.play-btn > .mod1 > .hd > .song-title' );//音乐标题
-	var playBtn = document.querySelector( '.play-btn > .mod3 > a > .icon-play' );//播放按钮、暂停按钮、上一曲、下一曲
-	var pauseBtn = document.querySelector( '.play-btn > .mod3 > a > .icon-pause' );
-	var prevBtn = document.querySelector( '.play-btn > .mod3 > a > .icon-prev' );
-	var nextBtn = document.querySelector( '.play-btn > .mod3 > a > .icon-next' );
-	var playPanel = document.querySelector( '.play-list > .list-con > .play-panel' );//歌曲面板
-	let progress = document.querySelector( '.play-btn > .mod1 > .bd > .progress-load' );//进度条
+
+	//页面元素获取
+	let author = document.querySelector( '.play-detail>.author' );
+	let posterImg = document.querySelector( '.play-detail>.poster-con>.poster' );
+	let songType = document.querySelector( '.play-detail>.type>a' );
+	let songTitle = document.querySelector( '.play-btn > .mod1 > .hd > .song-title' );
+	let playBtn = document.querySelector( '.play-btn > .mod3 > a > .icon-play' );
+	let pauseBtn = document.querySelector( '.play-btn > .mod3 > a > .icon-pause' );
+	let prevBtn = document.querySelector( '.play-btn > .mod3 > a > .icon-prev' );
+	let nextBtn = document.querySelector( '.play-btn > .mod3 > a > .icon-next' );
+	let playPanel = document.querySelector( '.play-list > .list-con > .play-panel' ); 
+	let progress = document.querySelector( '.play-btn > .mod1 > .bd > .progress-load' );
 	let progressPlay = document.querySelector( '.play-btn > .mod1 > .bd > .progress-load > .progress-play' );
 	let restTime = document.querySelector( '.play-btn > .mod1 > .hd > .time' );
+	let volProgress = document.querySelector( '.mod2 > a > .vol-container > .volume-progress' );
+	let volProgressPlay = document.querySelector( '.mod2 > a > .vol-container > .volume-progress > .volume-progress-play' );
+	let modeBtn = document.querySelector( '.mod2 > a > .icon-mode' );
 	
 	
-	/*函数列表*/
+	
+	/*=======函数列表======*/
+	
 	//重载音乐
 	const loadSong = function() {
 		let playingSong = playlist[ playingIndex ];
@@ -61,20 +54,86 @@ window.onload = () => {
 	
 	//上一曲
 	const prevMusic = function() {
-		if( playingIndex !== 0 ) {
-			playingIndex--;
-			loadSong();
-			dbAudio.play();
+		switch( modeBtn.dataset.mode ) {
+			case '0':
+				if( playingIndex !== 0 ) {
+					playingIndex--;
+					loadSong();
+					dbAudio.play();
+				}
+				break;
+			case '1':
+				if( playingIndex === 0 ) {
+					playingIndex = 3;
+				}else {
+					playingIndex--;
+				}
+				loadSong();
+				dbAudio.play();
+				break;
+			case '2':
+				if( playingIndex === 0 ) {
+					playingIndex = 3;
+				}else {
+					playingIndex--;
+				}
+				loadSong();
+				dbAudio.play();
+				break;
+			case '3':
+				let lastIndex = playingIndex;
+				do{
+					playingIndex = Math.floor( Math.random() * 4 );
+				}while( lastIndex === playingIndex )
+				loadSong();
+				dbAudio.play();
+				break;
+			default:
+				break;
 		}
+		
 	}
 	
 	//下一曲
 	const nextMusic = function() {
-		if( playingIndex !== playlist.length - 1 ) {
-			playingIndex++;
-			loadSong();
-			dbAudio.play();
+		switch( modeBtn.dataset.mode ) {
+			case '0':
+				if( playingIndex !== playlist.length - 1 ) {
+					playingIndex++;
+					loadSong();
+					dbAudio.play();
+				}
+				break;
+			case '1':
+				if( playingIndex === 3 ) {
+					playingIndex = 0;
+				}else {
+					playingIndex++;
+				}
+				loadSong();
+				dbAudio.play();
+				break;
+			case '2':
+				if( playingIndex === 3 ) {
+					playingIndex = 0;
+				}else {
+					playingIndex++;
+				}
+				loadSong();
+				dbAudio.play();
+				break;
+			case '3':
+				let lastIndex = playingIndex;
+				do{
+					playingIndex = Math.floor( Math.random() * 4 );
+				}while( lastIndex === playingIndex )
+				loadSong();
+				dbAudio.play();
+				break;
+			default:
+				break;
 		}
+		
 	}
 	
 	//加载播放列表
@@ -87,10 +146,14 @@ window.onload = () => {
 						<i class="icon star">&#xe604;</i>
 					</a>
 					<a class="song" data-index="${ i }" href="javascript:void(0)">
-						<span  data-index="${ i }">${ playlist[i].songName }</span>
-						<span  data-index="${ i }">${ playlist[i].singer }</span>
+						<span class="song-name" data-index="${ i }">${ playlist[i].songName }</span>
+						<span class="song-author" data-index="${ i }">${ playlist[i].singer }</span>
 					</a>
 					<div class="icon-wrapper">
+						
+						<a class="export-link" href="javascript:void(0)">
+							<i class="icon icon-export">&#xe606;</i>
+						</a>
 						<div class="share-link">
 							<a href="javascript:void(0)">
 								<i class="icon icon-weibo">&#xe61c;</i>
@@ -102,9 +165,6 @@ window.onload = () => {
 								<i class="icon">&#xe605;</i>
 							</a>
 						</div>
-						<a class="export-link" href="javascript:void(0)">
-							<i class="icon icon-export">&#xe606;</i>
-						</a>
 						<a href="javascript:void(0)">
 							<i class="icon icon-cancel">&#xe6fd;</i>
 						</a>
@@ -116,13 +176,14 @@ window.onload = () => {
 		playPanel.innerHTML = playItem;
 	}
 	
-	//
+	//列表音乐点击处理
 	const childClick = function( e ) {
 		let playIndex = Number( e.target.dataset.index );
-		if( playIndex ) {
+		console.log( playIndex );
+		if( playIndex || playIndex === 0 ) {
 			playingIndex = playIndex;
+			loadSong();
 		}
-		loadSong();
 	}
 	
 	//设置进度条
@@ -137,11 +198,36 @@ window.onload = () => {
 		}
 		restTime.innerHTML = `-${ minute }:${ second } `;
 	}
+	
+	//设置歌曲进度条
 	const setProgress = function( e ) {
 		dbAudio.currentTime = e.offsetX / progress.clientWidth * playlist[ playingIndex ].length;
 	}
 	
-	/*函数列表完*/
+	//设置音量
+	const setVol = function( e ) {
+		volProgressPlay.style.width = e.offsetX + 'px'; 
+		dbAudio.volume = e.offsetX / volProgress.clientWidth;
+	}
+	
+	//切换播放模式
+	const mPlayMode = function() {
+		let index = parseInt( modeBtn.dataset.mode );
+		if( index === 3 ) {
+			index = 0;
+			modeBtn.innerHTML = playMode[index];
+			modeBtn.setAttribute( 'data-mode', `${ index }` );
+		}else{
+			index++; 
+			if( index === 2 ) {
+				dbAudio.loop = true;
+			}
+			modeBtn.innerHTML = playMode[index];
+			modeBtn.setAttribute( 'data-mode', `${ index }` );
+		}
+	}
+	
+	/*========函数列表完========*/
 	
 	
 	//事件绑定
@@ -152,7 +238,11 @@ window.onload = () => {
 	playPanel.addEventListener( 'click', childClick );
 	progress.addEventListener( 'click', setProgress );
 	dbAudio.addEventListener( 'timeupdate', getProgress );
+	dbAudio.addEventListener( 'ended', nextMusic );
+	volProgress.addEventListener( 'click', setVol, false );
+	modeBtn.addEventListener( 'click', mPlayMode );
 	
+	//初始化
 	loadPlayList();
 	loadSong();
 	
