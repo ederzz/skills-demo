@@ -86,8 +86,14 @@ header{
 }
 .icon-wrapper .share-link{
 	position:absolute;
-	left:-40px;
+	left:-63px;
+	top: 0;
 	display: none;
+	width:53px;
+	padding:0 5px
+}
+.icon-wrapper .share-link:hover {
+	display: block;
 }
 .icon-cancel{
 	margin-left:10px;
@@ -97,6 +103,19 @@ header{
 }
 .icon-douban{
 	font-size:18px;
+}
+
+.play-panel > li > .song > .song-name {
+	width:100px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.play-panel > li > .song > .song-author {
+	width:75px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .play-list{
@@ -130,14 +149,17 @@ header{
 	display: flex;
 	justify-content: space-around;
 }
+.export-link:hover + .share-link {
+	display: block;
+}
 
 /*播放操作*/
 .play-btn{
 	margin-top:100px;
-	display: flex;
 }
 .mod1{
 	width:540px;
+	float:left;
 }
 .mod1 .hd{
 	display: flex;
@@ -170,20 +192,55 @@ header{
 	right:-6px;
 	top:-4px;
 }
-.mod2{
-	margin:14px 0 0 35px;
+.mod2 {
+    height: 51px;
+    line-height: 51px;
+    width: 85px;
+    display: inline-flex;
+    justify-content: center;
+    float:left;
 }
-.mod2 i{
+.mod2 a {
 	margin-right:10px;
+	height:15px;
 }
-.icon-volume{
+.mod2 > a:hover > .vol-container {
+	display: block;
+}
+.mod2 > a > .vol-container {
+	display: none;
+	position: absolute;
+	right:-50px;
+	top:17px;
+	padding:5px 0;
+}
+.mod2 > a > .vol-container > .volume-progress {
+	width:50px;
+	height:4px;
+	background:#afa2a2;
+}
+.mod2 > a > .vol-container > .volume-progress > .volume-progress-play {
+	width:50px;
+	height:4px;
+	background:#fff;
+}
+.mod2 > a:nth-child(2) {
+	position:relative;
+}
+.mod2 > a > .icon-mode {
+	font-size:17px;
+}
+.icon-volume {
 	font-size:20px;
 }
-.mod3{
-	margin:18px 0 0 96px;
-	width:160px;
-	display: flex;
-	justify-content: space-between;
+.mod3 {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    height: 51px;
+    align-items: center;
+    float: right;
+    float:right;
 }
 .mod3 .icon{
 	font-size:22px;
@@ -199,7 +256,6 @@ header{
 	top:-4px;
 	display: none;
 }
-
 
 
 
