@@ -224,6 +224,8 @@ window.onload = () => {
 			index++; 
 			if( index === 2 ) {
 				dbAudio.loop = true;
+			}else {
+				dbAudio.loop = false;
 			}
 			modeBtn.innerHTML = playMode[index];
 			modeBtn.setAttribute( 'data-mode', `${ index }` );

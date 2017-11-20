@@ -13,7 +13,7 @@ const playlist = [
 		singer: '左小祖咒',
 		type: 'rock',
 		songName: '不万能的喜剧',
-		length: 345,
+		length: 334,
 	},
 	{
 		url: 'http://mr3.doubanio.com/5476efc5ac92a33ae406ddc51f3e9943/0/fm/song/p2259166_128k.mp3',
