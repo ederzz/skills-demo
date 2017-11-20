@@ -57,6 +57,7 @@ header{
 }
 .play-list{
 	width:560px;
+	margin-right: 10px;
 }
 .list-head{
 	border-bottom:1px solid rgba(255,255,255,0.05);
@@ -67,8 +68,8 @@ header{
 	height:45px;
 	line-height: 45px;
 }
-.list-con li a.song{
-	width:315px;
+.list-con li a.song {
+	width:56%;
 	display: inline-flex;
 	justify-content: space-between;
 }
@@ -156,6 +157,11 @@ header{
 /*播放操作*/
 .play-btn{
 	margin-top:100px;
+}
+.play-btn::after {
+	content:'';
+	display: block;
+	clear:both;
 }
 .mod1{
 	width:540px;
