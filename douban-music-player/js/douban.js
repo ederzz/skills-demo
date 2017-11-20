@@ -11,15 +11,15 @@ window.onload = () => {
 	let author = document.querySelector( '.play-detail>.author' );
 	let posterImg = document.querySelector( '.play-detail>.poster-con>.poster' );
 	let songType = document.querySelector( '.play-detail>.type>a' );
-	let songTitle = document.querySelector( '.play-btn > .mod1 > .hd > .song-title' );
+	let songTitle = document.querySelector( '.play-btn > div > .mod1 > .hd > .song-title' );
 	let playBtn = document.querySelector( '.play-btn > .mod3 > a > .icon-play' );
 	let pauseBtn = document.querySelector( '.play-btn > .mod3 > a > .icon-pause' );
 	let prevBtn = document.querySelector( '.play-btn > .mod3 > a > .icon-prev' );
 	let nextBtn = document.querySelector( '.play-btn > .mod3 > a > .icon-next' );
 	let playPanel = document.querySelector( '.play-list > .list-con > .play-panel' ); 
-	let progress = document.querySelector( '.play-btn > .mod1 > .bd > .progress-load' );
-	let progressPlay = document.querySelector( '.play-btn > .mod1 > .bd > .progress-load > .progress-play' );
-	let restTime = document.querySelector( '.play-btn > .mod1 > .hd > .time' );
+	let progress = document.querySelector( '.play-btn > div > .mod1 > .bd > .progress-load' );
+	let progressPlay = document.querySelector( '.play-btn > div > .mod1 > .bd > .progress-load > .progress-play' );
+	let restTime = document.querySelector( '.play-btn > div > .mod1 > .hd > .time' );
 	let volProgress = document.querySelector( '.mod2 > a > .vol-container > .volume-progress' );
 	let volProgressPlay = document.querySelector( '.mod2 > a > .vol-container > .volume-progress > .volume-progress-play' );
 	let modeBtn = document.querySelector( '.mod2 > a > .icon-mode' );
@@ -204,8 +204,11 @@ window.onload = () => {
 		dbAudio.currentTime = e.offsetX / progress.clientWidth * playlist[ playingIndex ].length;
 	}
 	
+	
 	//设置音量
 	const setVol = function( e ) {
+		e.stopPropagation();
+		e.preventDefault();
 		volProgressPlay.style.width = e.offsetX + 'px'; 
 		dbAudio.volume = e.offsetX / volProgress.clientWidth;
 	}
@@ -239,7 +242,7 @@ window.onload = () => {
 	progress.addEventListener( 'click', setProgress );
 	dbAudio.addEventListener( 'timeupdate', getProgress );
 	dbAudio.addEventListener( 'ended', nextMusic );
-	volProgress.addEventListener( 'click', setVol, false );
+	volProgress.addEventListener( 'click', setVol );
 	modeBtn.addEventListener( 'click', mPlayMode );
 	
 	//初始化
