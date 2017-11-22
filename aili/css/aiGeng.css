@@ -1,0 +1,205 @@
+/*reset*/
+body,
+ul,
+li {
+	padding:0;
+	margin:0;
+}
+a {
+	color:#fff;
+	text-decoration: none;
+}
+.main-nav a:hover {
+	text-decoration: underline;
+}
+ul {
+	list-style: none;
+}
+li {
+	float:left;
+	padding:0 15px;
+}
+
+
+
+/*=======工具类=======*/
+.pre-line {
+	white-space: pre-line;
+	text-align: center;
+	color:#fff;
+}
+.infor-icon {
+	width:50px;
+	height:50px;
+}
+.clear-outline {
+	outline:none;
+	height:40px;
+}
+.clearfix::after {
+	content: '';
+	display: block;
+	clear:both;
+}
+.center-block {
+	width:100%;
+	box-sizing: border-box;
+	padding:0 112px;
+}
+.active {
+	color:#bbb;
+}
+.show {
+	position:relative;
+	z-index: 100;
+}
+/*=======工具类完=======*/
+
+
+
+
+#container {
+	position: relative;
+}
+
+
+
+
+/*=====导航栏====*/
+.menu {
+	position:absolute;
+	top:45px;
+	display: flex;
+	justify-content: space-between;
+	width:100%;
+	padding:0 112px;
+	box-sizing: border-box;
+	z-index: 100;
+}
+.icon-instarg {
+	font-weight: 600;
+}
+
+
+
+/*=====介绍=====*/
+.introduction {
+	height:800px;
+	width:100%;
+	background: url(../img/Image.jpg) no-repeat center center rgba( 0,0,0,0.7 );
+	background-size: cover;
+	box-sizing: border-box;
+	padding:0 112px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+.introduction::after {
+	content: '';
+	display: block;
+	background:rgba( 0,0,0,0.4 );
+	height:800px;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.infor {
+	text-align: center;
+}
+.main-title {
+	font-size:45px;
+}
+.do-infor {
+	font-size:16px;
+}
+.arrow {
+	font-size:60px;
+	font-weight: 100;
+}
+.logo .iconfont {
+	font-size:50px;
+}
+
+
+/*======表单输入=====*/
+.form {
+	height:165px;
+	width:100%;
+	background: rgba(66,61,61,1);
+	padding: 0 112px;
+	color:#fff;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.start-btn {
+	width:165px;
+	border-radius: 25px;
+	background:#206ac7;
+	border:none;
+	color:#fff;
+	cursor: pointer;
+}
+.input-e,
+.input-c {
+	width:230px;
+	border-radius:9px;
+	background:#5f5d5d;
+	border:none;
+	padding:0 20px;
+	box-sizing: border-box;
+	color:#fff;
+}
+.input-c {
+	width:525px;
+	background: url(../img/downarrow.jpg) no-repeat right top #5f5d5d;
+}
+::-webkit-input-placeholder {
+	color:#fff;
+}
+
+
+
+/*=====详情====*/
+#container > .detail {
+	height:660px;
+	background:#fff;
+	
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+}
+.logo .icon-logo {
+	color:#177fd8;
+	font-size:120px;
+}
+.top-content {
+	font-size:40px;
+	font-weight: 900;
+	color:rgba( 0,0,0,0.7 );
+	margin:15px 10px;
+}
+.bot-content {
+	color:rgba( 0,0,0,0.7 )
+}
+.options {
+	margin:100px 0;
+	display: flex;
+	justify-content: space-between;
+	width:100%;
+	padding:0 112px;
+}
+.op-detail {
+	color:rgba( 0,0,0,0.7 );
+}
+.op-icon > .iconfont {
+	font-size:35px;
+}
+.op-title {
+	margin:20px 0 5px;
+}
