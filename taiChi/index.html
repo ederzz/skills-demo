@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>太极图</title>
+		<style>
+			.tai-chi {
+				width:300px;
+				height:300px;
+				border:1px solid #bbb;
+				position:relative;
+				border-radius:50%;
+				animation: spin 3s linear infinite;
+			}
+			.taiChi-left {
+				width:50%;
+				height: 100%;
+				border-radius:100% 0 0 100% /50% 0 0 50%;
+				background:#000;
+				position: absolute;
+				top:0;
+				left:0;
+			}
+			
+			/*下面的border-radius画出半圆*/
+			.taiChi-right {
+				width:50%;
+				height: 100%;
+				border-radius:0 100% 100% 0 /0 50% 50% 0;
+				background:#fff;
+				position: absolute;
+				right:0;
+				top:0;
+			}
+			.b-circle {
+				width:50%;
+				height:50%;
+				border-radius: 50%;
+				background:#000;
+				position:absolute;
+				top:0;
+				right:25%;
+			}
+			.circle-b {
+				width:25%;
+				height:25%;
+				background:#fff;
+				border-radius: 50%;
+				position:absolute;
+				top:40%;
+				left:40%;
+			}
+			.w-circle {
+				width:50%;
+				height:50%;
+				border-radius: 50%;
+				background:#fff;
+				position:absolute;
+				bottom:0;
+				left:25%;
+			}
+			.circle-w {
+				width:25%;
+				height:25%;
+				background:#000;
+				border-radius: 50%;
+				position:absolute;
+				top:40%;
+				left:40%;
+			}
+			
+			@keyframes spin {
+				0% {
+					transform: rotate( 0deg );
+				}
+				100% {
+					transform: rotate( 360deg );
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="tai-chi">
+				<div class="taiChi-left"></div>
+				<div class="taiChi-right"></div>
+				<div class="b-circle">
+					<div class="circle-b"></div>
+				</div>
+				<div class="w-circle">
+					<div class="circle-w"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
