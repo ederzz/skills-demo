@@ -3,8 +3,75 @@
 <head>
 	<meta charset="UTF-8">
 	<title>只能输入数字和字母</title>
+	<style>
+		.a {
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+	</style>
 </head>
 <body>
 	<input type="text" onKeyUp="value=value.replace(/[\W_]/g,'')">
+	<div class="a"></div>
+
+	<script>
+		var arr = [
+			{
+				name: "aa",
+				id: 1000,
+				sex: 0,
+				age: 21
+			},
+			{
+				name: "bb",
+				id: 1001,
+				sex: 0,
+				age: 28
+			},
+			{
+				name: "cc",
+				id: 1004,
+				sex: 1,
+				age: 19
+			},
+			{
+				name: "dd",
+				id: 1003,
+				sex: 1,
+				age: 12
+			},
+			{
+				name: "ee",
+				id: 1003,
+				sex: 3,
+				age: 12
+			}
+		];
+
+		function sortFunc( a, b ) {
+			if( a.age > b.age ) {
+				return 1;
+			}else if( a.age < b.age ) {
+				return -1;
+			}else if( a.id > b.id ) {
+				return 1;
+			}else if( a.id < b.id ) {
+				return -1;
+			}else if( a.sex >= b.sex ) {
+				return 1;
+			}else if( a.sex < b.sex ) {
+				return -1;
+			}
+		}
+		arr.sort( sortFunc );
+		console.log( arr );
+	</script>
 </body>
 </html>
