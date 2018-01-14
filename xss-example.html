@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>xss测试用例</title>
+	<style type="text/css">
+		.ipt-1 {
+			width: 200px;
+			height: 20px;
+			border: 1px solid #bbb;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<section class="inject-container">
+			<input type="text" class="ipt-1" />
+		</section>
+		<section class="attack-panel">
+		</section>
+	</div>
+	
+	<script type="text/javascript">
+		const xssInput = document.querySelector('.ipt-1');
+		const attackPanel = document.querySelector('.attack-panel');
+		const scriptItem = document.createElement('div');
+
+		xssInput.addEventListener('keyup', e => {
+			if(e.keyCode === 13) {
+				scriptItem.innerHTML = e.target.value;
+				attackPanel.appendChild(scriptItem);
+			}
+		});
+
+	</script>
+</body>
+</html>
