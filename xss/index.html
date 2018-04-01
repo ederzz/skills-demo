@@ -35,11 +35,11 @@
 		const submitBtns = document.querySelectorAll('.inject-container section input[type="submit"]');
 		const xssInput = document.querySelector('.ipt-1');
 		const attackPanel = document.querySelector('.attack-panel');
-		const scriptItem = document.createElement('div');
 
 		submitBtns.forEach(btn => {
 			btn.addEventListener('click', e => {
 				console.log(1);
+				const scriptItem = document.createElement('div');
 				const iptClass = `.ipt-${e.target.className.split('-')[1]}`;
 				scriptItem.innerHTML = document.querySelector(iptClass).value;
 				attackPanel.appendChild(scriptItem);
