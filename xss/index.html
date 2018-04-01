@@ -13,24 +13,37 @@
 </head>
 <body>
 	<div class="main">
-		<section class="inject-container">
-			<input type="text" class="ipt-1" />
-			<input type="submit" class="submit-1" />
-		</section>
+		<div class="inject-container">
+			<section class="inject-node-1">
+				<input type="text" class="ipt-1" />
+				<input type="submit" class="submit-1" />
+			</section>
+			<section class="inject-node-2">
+				<input type="text" class="ipt-2" />
+				<input type="submit" class="submit-2" />
+			</section>
+			<section class="inject-node-3">
+				<input type="text" class="ipt-3" />
+				<input type="submit" class="submit-3" />
+			</section>
+		</div>
 		<section class="attack-panel">
 		</section>
 	</div>
 	
 	<script type="text/javascript">
+		const submitBtns = document.querySelectorAll('.inject-container section input[type="submit"]');
 		const xssInput = document.querySelector('.ipt-1');
-		const submit = document.querySelector('.submit-1');
 		const attackPanel = document.querySelector('.attack-panel');
 		const scriptItem = document.createElement('div');
 
-		submit.addEventListener('click', () => {
-			scriptItem.innerHTML = xssInput.value;
-			attackPanel.appendChild(scriptItem);
-		});
+		submitBtns.forEach(btn => {
+			btn.addEventListener('click', e => {
+				const iptClass = `.ipt-${e.target.className.split('-')[1]}`;
+				scriptItem.innerHTML = document.querySelector(iptClass).value;
+				attackPanel.appendChild(scriptItem);
+			})
+		})
 
 	</script>
 </body>
