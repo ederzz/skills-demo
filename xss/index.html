@@ -39,6 +39,7 @@
 
 		submitBtns.forEach(btn => {
 			btn.addEventListener('click', e => {
+				console.log(1);
 				const iptClass = `.ipt-${e.target.className.split('-')[1]}`;
 				scriptItem.innerHTML = document.querySelector(iptClass).value;
 				attackPanel.appendChild(scriptItem);
