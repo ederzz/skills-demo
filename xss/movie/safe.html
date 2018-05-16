@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>xss测试用例</title>
+	<title>movie-safe</title>
 	<style type="text/css">
 		.ipt-1 {
 			width: 200px;
@@ -13,27 +13,6 @@
 </head>
 <body>
 	<div class="main">
-		<header>
-			<nav>
-				<ul>
-					<li>
-						<a href="./news/index.html">news</a>
-					</li>
-					<li>
-						<a href="./music/index.html">music</a>
-					</li>
-					<li>
-						<a href="./movie/index.html">movie</a>
-					</li>
-					<li>
-						<a href="./books/index.html">books</a>
-					</li>
-					<li>
-						<a href="./activity/index.html">activity</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
 		<div class="inject-container">
 			<section class="inject-node-1">
 				<input type="text" class="ipt-1" />
@@ -54,16 +33,10 @@
 	
 	<script type="text/javascript">
 		const submitBtns = document.querySelectorAll('.inject-container section input[type="submit"]');
-		const xssInput = document.querySelector('.ipt-1');
-		const attackPanel = document.querySelector('.attack-panel');
 
 		submitBtns.forEach(btn => {
 			btn.addEventListener('click', e => {
 				console.log(1);
-				const scriptItem = document.createElement('div');
-				const iptClass = `.ipt-${e.target.className.split('-')[1]}`;
-				scriptItem.innerHTML = document.querySelector(iptClass).value;
-				attackPanel.appendChild(scriptItem);
 			})
 		})
 
